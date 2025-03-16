@@ -1,9 +1,9 @@
 import { handleError } from './handle-error.js';
 
-const API_KEY = import.meta.env.VITE_API_KEY;
+// const API_KEY = import.meta.env.VITE_API_KEY;
+const API_KEY = "49367639-b33ebacd3c1171708280ede99"
 const BASE_URL = 'https://pixabay.com/api/';
 
-console.log(`${API_KEY}`);
 
 const PARAMS = {
   key: API_KEY,

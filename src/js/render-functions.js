@@ -31,7 +31,7 @@ function renderImages({ total, hits }) {
       `)
       .join('');
 
-    const item = document.createElement('div');
+    const item = document.createElement('li');
     item.classList.add('gallery-item');
 
     item.innerHTML = `
