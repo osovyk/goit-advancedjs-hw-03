@@ -1,9 +1,9 @@
 import { handleError } from './handle-error.js';
 
-require('dotenv').config();
-
-const API_KEY = process.env.API_KEY;
+const API_KEY = import.meta.env.API_KEY;
 const BASE_URL = 'https://pixabay.com/api/';
+
+console.log(`${API_KEY}`);
 
 const PARAMS = {
   key: API_KEY,
