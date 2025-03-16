@@ -38,7 +38,7 @@ function renderImages({ total, hits }) {
       <a href="${largeImageURL}" class="gallery-link">
         <div class="image-wrapper">
           <img
-            src="${webformatURL}"
+            src="${webformatURL.replace('_640', '_360')}"
             alt="${tags}"
             class="gallery-image hidden"
           />
