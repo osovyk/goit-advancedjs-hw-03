@@ -7,7 +7,7 @@ import{i as E,S as I}from"./assets/vendor-DpVPnhEv.js";(function(){const r=docum
       <a href="${e}" class="gallery-link">
         <div class="image-wrapper">
           <img
-            src="${n}"
+            src="${n.replace("_640","_360")}"
             alt="${t}"
             class="gallery-image hidden"
           />
