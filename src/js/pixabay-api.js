@@ -1,4 +1,5 @@
 import { handleError } from './handle-error.js';
+import axios from "axios";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = 'https://pixabay.com/api/';
@@ -13,24 +14,14 @@ const PARAMS = {
 
 function fetchImages(query) {
   const loader = document.getElementById('loader');
-
   loader.style.display = 'flex';
 
-  const urlParams = new URLSearchParams({
-    ...PARAMS,
-    q: query,
-  });
-
-  const url = `${BASE_URL}?${urlParams}`;
-
-  return fetch(url)
-    .then(response => {
-      if (!response.ok) {
-        handleError('Failed to fetch images');
-        return;
-      }
-      return response.json();
+  return axios
+    .get(BASE_URL, {
+      params: { ...PARAMS, q: query },
     })
+    .then(response => response.data)
+    .catch(() => handleError('Failed to fetch images'))
     .finally(() => {
       loader.style.display = 'none';
     });
